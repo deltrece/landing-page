@@ -33,4 +33,6 @@ Fork this project and make your own landing page
 
 ## :ballot_box_with_check: License
 
-License information goes here.
+[License](LICENSE.txt)
+
+[(Back to top)](#table-of-contents)
