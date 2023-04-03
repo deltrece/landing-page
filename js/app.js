@@ -27,11 +27,11 @@ console.log("Wasssuuuppp!!!");
 
 const pageBody = document.body;
 const navBarList = document.getElementById("navbar__list"); // <unordered list> element located in <nav> element located in <header> element
-const navMenu = document.getElementsByClassName("menu__link"); // class label in css file
+//const navMenu = document.getElementsByClassName("menu__link"); // class label in css file
 const navBarMenu  = document.getElementsByClassName("navbar__menu"); // class label in css file
 const sections = document.querySelectorAll("section");  // <section> element in html file (four of them)
-const active = document.getElementsByClassName(".your-active-class"); // class label in <section> element
-const container = document.querySelectorAll(".landing__container"); // class label in <div> section
+const active = document.getElementsByClassName("your-active-class"); // class label in <section> element
+const container = document.querySelectorAll("landing__container"); // class label in <div> section
 
 
 /**
@@ -45,7 +45,7 @@ const container = document.querySelectorAll(".landing__container"); // class lab
 */
 
 /*
-function isInViewport(element) {
+function isInViewport(element) {  //this is a helper function
   const rect = element.getBoundingClientRect();
   return (
       rect.top >= 0 &&
@@ -69,24 +69,21 @@ function isInViewport(element) {
 * * build the nav// active state w/ css//create a funtion using template literals that returns a new element//helper function
 */
 
-// add class to ul element
-const listElem = document.querySelector("ul");
-listElem.classList.add('nav__menu');
-console.log(listElem);
+
 
 // create li element
 const listItem = document.createElement("li");
 
 // append li element to ul element
-navbar__list.append(listItem);
+navBarList.append(listItem);
 
-console.log(listItem);
+//console.log(listItem);
 
-const list = document.getElementsByClassName("nav__menu");
-for list(i=0; i<=list.length; i++) {
-  listItem.appendChild(list);
-  console.log(list);
-}
+// sections.forEach((section)=> { // callback function
+//   //create list item
+//   //adding the nav link
+//   //add text inside
+// })
 
 
 // navbar__list.append(navBarList);
@@ -103,11 +100,11 @@ for list(i=0; i<=list.length; i++) {
  
 
 /** 
-* * Add class 'active' to section when near top of viewport
+* * Add class 'active' to section when near top of viewport .getbounding rect//foreach function// if/else statement
 */
 
 /** 
-* * Scroll to anchor ID using scrollTO event
+* * Scroll to anchor ID using scrollTO event //onclick/ add click event listener//when I build the anchor link
 */ 
 
 
@@ -117,10 +114,5 @@ for list(i=0; i<=list.length; i++) {
  * 
 */
 
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
 
