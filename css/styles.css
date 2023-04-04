@@ -65,14 +65,18 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
+    display: flex;
+    justify-content: space-around;
     padding-left: 0;
     margin: 0;
     text-align: right;
 }
 
-.navbar__menu li {
+.navbar__menu li a {
     display: inline-block;
     background-color: #fff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
 }
 
 .navbar__menu .menu__link {
@@ -87,6 +91,7 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
+    text-decoration: none;
 }
 
 /* Header Styles */

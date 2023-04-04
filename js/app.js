@@ -26,13 +26,6 @@
 console.log("Wasssuuuppp!!!");
 
 const pageBody = document.body;
-const navBarList = document.getElementById("navbar__list"); // <unordered list> element located in <nav> element located in <header> element
-//const navMenu = document.getElementsByClassName("menu__link"); // class label in css file
-const navBarMenu  = document.getElementsByClassName("navbar__menu"); // class label in css file
-const sections = document.querySelectorAll("section");  // <section> element in html file (four of them)
-const active = document.getElementsByClassName("your-active-class"); // class label in <section> element
-const container = document.querySelectorAll("landing__container"); // class label in <div> section
-
 
 /**
  * ! End Global Variables Above
@@ -56,9 +49,6 @@ function isInViewport(element) {  //this is a helper function
 }
 */
 
-//function navLink(section) {}
-//function activeSection(section) {}
-
 /**
  * ? End Helper Functions Above
  * ! Begin Main Functions Below
@@ -66,45 +56,78 @@ function isInViewport(element) {  //this is a helper function
 */
 
 /** 
-* * build the nav// active state w/ css//create a funtion using template literals that returns a new element//helper function
+* * build the nav// active state w/ css//create a funtion using template literals that returns a new element//
 */
+const navBarList = document.getElementById("navbar__list"); // <unordered list> element located in <nav> element located in <header> element
+//const navMenu = document.getElementsByClassName("menu__link"); // class label in css file
+const navBarMenu  = document.getElementsByClassName("navbar__menu"); // class label in css file
+const sections = document.querySelectorAll("section");  // <section> element in html file (four of them)
 
+sections.forEach((section)=> { // <--callback function
+  const listItem = document.createElement("li"); // create list element
+  navBarList.append(listItem);  // add li element to ul element
 
+  const linkName = document.createElement("a"); // anchor link created
+  linkName.innerHTML = `${section.dataset.nav}`; // text of section
+  linkName.setAttribute("href", '#'+section.id); // link to section 
+  listItem.appendChild(linkName); // add to nav menu
 
-// create li element
-const listItem = document.createElement("li");
+  // section.addEventListener("click", (event) => { // Adding a "click" event listener per link
+  //   event.preventDefault();  //prevents default behavior
+  //   linkName = event.target.dataset.nav; // Targeting each "data-block" dataset per clicked link
+  //   scrollTo(section.id);
+  // });
+	});
+   
+//document.addEventListener("scroll", function() { makeActive();});
 
-// append li element to ul element
-navBarList.append(listItem);
+// scrollTo(()=>{
+//   linkName.addEventListener("click", function());
+//   behavior: "smooth";
+// })
 
-//console.log(listItem);
+/** 
+* * Add class 'active' to section when near top of viewport 
+*/
+// const container = document.querySelectorAll("landing__container"); // class label in <div> section
+// const active = document.getElementsByClassName("your-active-class"); // class label in <section> element
+// const div = document.querySelectorAll('div'); // div element
 
-// sections.forEach((section)=> { // callback function
-//   //create list item
-//   //adding the nav link
-//   //add text inside
+// function makeActive(){
+//   for(const section of sections) {
+//       const div = section.getBoundingClientRect();
+//       if (div.top <= 150 && div.bottom >= 150) {
+//       //apply active state on current section and corresponding Nav link
+//       section.landing__container.add("your-active-class");
+//       document.querySelector(`${'#'+section.id}`).landing__container.add("active");
+//       } else {
+//       //Remove active state from other section and corresponding Nav link
+//       section.landing__container.remove("your-active-class");
+//       document.querySelector(`${'#'+section.id}`).landing__container.remove("active");
+//       }
+//    }
+// }
+
+// window.addEventListener("scroll", function() {
+// 	div.forEach(function(div) {
+// 		const bounds = div.getBoundingClientRect();
+// 		const isInViewport = bounds.top >= 0
+// 			&& bounds.left > 0
+// 			&& bounds.right <= window.innerWidth
+// 			&& bounds.bottom <= window.innerWidth;
+
+// 		if (isInViewport) {
+// 			div.landing__container.add("your-active-class");
+// 		} else {
+// 			div.landing__container.remove("your-active-class");
+// 		}
+// 	});
 // })
 
 
-// navbar__list.append(navBarList);
-
-// console.log(navBarList);
-
-// const navbar__list = document.createElement("li");
-// navbar__list.innerHTML = `${"sections"}`;
-// navbar__list.textContent = `${"sections"}`;
-// document.getElementById("navbar__list"); 
-// navBarList.appendChild(navbar__list);
-
-// console.log(navbar__list);
- 
 
 /** 
-* * Add class 'active' to section when near top of viewport .getbounding rect//foreach function// if/else statement
-*/
-
-/** 
-* * Scroll to anchor ID using scrollTO event //onclick/ add click event listener//when I build the anchor link
+* * Scroll to anchor ID using scrollTo event //onclick/ add click event listener//when I build the anchor link
 */ 
 
 
@@ -113,6 +136,10 @@ navBarList.append(listItem);
  * ? Begin Events Below
  * 
 */
+// Build menu 
 
+// Scroll to section on link click
+
+// Set sections as active
 
 
