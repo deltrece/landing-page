@@ -18,30 +18,6 @@
  * Great to have comments before crucial code sections within the procedure.
 */
 
-/**
- * ! Define Global Variables Below
- * 
-*/
-// global functions are methods of the global object:
-console.log("Wasssuuuppp!!!");
-
-const pageBody = document.body;
-
-/**
- * ! End Global Variables Above
- * ? Start Helper Functions Below
- * 
-*/
-
-/**
- * ? Viewport Helper Function (Note:repitive for the viewport)
-*/
-
-/**
- * ? End Helper Functions Above
- * ! Begin Main Functions Below
- * 
-*/
 
 /** 
 * * build the nav
@@ -58,11 +34,22 @@ sections.forEach((section)=> { // <--callback function
   linkName.innerHTML = `${section.dataset.nav}`; // text of section
   linkName.setAttribute("href", '#'+section.id); // link to section 
   linkName.classList.add("menu__link");
+  //linkName.onclick = function();
   listItem.appendChild(linkName); // add to nav menu
   // need onclick event listener {behavior: "smooth"}
 	});
    
+const myLinks = document.querySelectorAll("linkName");  //querySelectorAll(".link");
 
+  myLinks.forEach((a) => {
+    a.addEventListener("click", (event) => {
+      event.preventDefault();
+      const block = event.target.dataset.block;
+      document.getElementById(block).scrollIntoView({
+        behavior: "smooth"
+      });
+    });
+  });
 /** 
 * * Add class 'active' to section when near top of viewport 
 */
@@ -101,41 +88,18 @@ window.addEventListener("scroll", function() {
 })
 
 /** 
-* * Scroll to anchor ID using scrollTo event //onclick/ add click event listener//when I build the anchor link
+* * Scroll to anchor ID 
 */ 
-const container = document.querySelectorAll("landing__container"); // class label in <div> section
 
-// document.querySelectorAll("section").forEach(anchor => {
-//   anchor.addEventListener("click, function"(e){
-//     e.preventDefault();
-//     document.querySelector(this.getAttribute("section")).scrollIntoView({
-//         behavior : "smooth";
-//     });
-//   });
-// });
-
-// (window).scroll(function() {
-//   ("section").each(function(){
-//      section = (this).offset().top;
-//      section = (window).scrollTop();
-//      onclick.preventDefault();
-//      section.scrollIntoView({behavior: "smooth"});
+(window).scroll(function() {
+  ("section").each(function(){
+     section = (this).offset().top;
+     section = (window).scrollTop();
+     onclick.preventDefault();
+     section.scrollIntoView({behavior: "smooth"});
      
-//   });
-// })
+  });
+})
 
-// onclick.preventDefault();
-// section.scrollIntoView({ behavior: "smooth" });
-
-/**
- * ! End Main Functions Above
- * ? Begin Events Below
- * 
-*/
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
 
