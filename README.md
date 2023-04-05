@@ -8,7 +8,7 @@
 * [Credits](#family_man_woman_girl_boy-credits)
 * [How_to_Contribute](#pen-how-to-contribute)
 * [Resources](#books)
-* [Lighthouse Report](:bulb: :house:)
+* [Lighthouse_Report](#bulb-house-lighthouse-report)
 * [License](#ballot_box_with_check-license)
 
 
