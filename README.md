@@ -7,17 +7,19 @@
 * [How_to_Use_Project](#computer-how-to-use-project)
 * [Credits](#family_man_woman_girl_boy-credits)
 * [How_to_Contribute](#pen-how-to-contribute)
+* [Resources](#books)
+* [Lighthouse Report](:bulb: :house:)
 * [License](#ballot_box_with_check-license)
 
 
 
 ## :memo: Project Description
 
-This originated from a starter project with some HTML and CSS styling which displayed a static version of the Landing Page project. This project was converted from a static project to an interactive one.
+This originated from a starter project with some HTML and CSS styling which displayed a static version of the Landing Page project. This project was converted from a static project to an interactive one to satisfy requirements for Udacity Front End Web Development Nano Degree Program.
 
 ## :electric_plug: How to Install and Run
 
-This does not need installation, simply open in your browser.
+No installation necessary. View in your browswer.
 
 ## :computer: How to Use Project
 
@@ -29,7 +31,13 @@ Myself, Deltrece Daniels, along with Udacity session leaders and peers.
 
 ## :pen: How to Contribute
 
-Fork this project and make your own landing page
+Fork this project and create your own landing page.
+
+## :books: Resources
+Udacity classroom module, library books and their access to online learning academys.  YouTube videos, Session Leads and Self-Initiated Peer Study Sessions.
+
+## :bulb: :house: Lighthouse Report
+Accesibility Results: <img src="assets/lighthouse-report.jpg"/>
 
 ## :ballot_box_with_check: License
 

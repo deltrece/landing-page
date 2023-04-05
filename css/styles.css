@@ -65,8 +65,6 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
-    display: flex;
-    justify-content: space-around;
     padding-left: 0;
     margin: 0;
     text-align: right;
@@ -91,7 +89,12 @@ section {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
-    text-decoration: none;
+    }
+
+#navbar__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 /* Header Styles */
@@ -110,7 +113,7 @@ section {
     color: #fff;
 }
 
-.page__footer p{
+.page__footer p a{
     color: #fff;
 }
 
@@ -201,7 +204,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
 section.your-active-class {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(217, 140, 209, 0.497) 100%);
 }
 
 section.your-active-class .landing__container::before {

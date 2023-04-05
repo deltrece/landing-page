@@ -23,83 +23,60 @@
 * * build the nav
 */
 const navBarList = document.getElementById("navbar__list"); // <unordered list> element located in <nav> element located in <header> element
-const navBarMenu  = document.getElementsByClassName("navbar__menu"); // class label in css file
 const sections = document.querySelectorAll("section");  // <section> element in html file (four of them)
 
-sections.forEach((section)=> { // <--callback function
-  const listItem = document.createElement("li"); // create list element
-  navBarList.append(listItem);  // add li element to ul element
+/**
+ * ! Helper Functions
+ */
 
-  const linkName = document.createElement("a"); // anchor link created
-  linkName.innerHTML = `${section.dataset.nav}`; // text of section
-  linkName.setAttribute("href", '#'+section.id); // link to section 
-  linkName.classList.add("menu__link");
-  //linkName.onclick = function();
-  listItem.appendChild(linkName); // add to nav menu
-  // need onclick event listener {behavior: "smooth"}
-	});
-   
-const myLinks = document.querySelectorAll("linkName");  //querySelectorAll(".link");
+// Create Nav Menu Links
+const navMenuLinks = (listItem) => {
+  return `<a class="menu__link" href="#${listItem.id}">${listItem.dataset.nav}</a>`;
+};
 
-  myLinks.forEach((a) => {
-    a.addEventListener("click", (event) => {
-      event.preventDefault();
-      const block = event.target.dataset.block;
-      document.getElementById(block).scrollIntoView({
-        behavior: "smooth"
-      });
-    });
+// Viewport Parameters
+const viewPort = (section) => {
+  const forBoundingClient = section.getBoundingClientRect ();
+  return (
+    forBoundingClient.top >= -200 && forBoundingClient.bottom <= (window.innerHeight || document.elementFromPoint.clientHeight) + 200
+  );
+};
+
+/**
+ * ! Main Functions
+ */
+// Create Nav Bar
+const navBar = () => {
+  const navMenu = Array.from(sections).map(navMenuLinks);
+  navBarList.innerHTML = navMenu.join("");
+};
+navBar ();
+
+// Create & Set Active State
+const setActive = () => {
+  sections.forEach((section) => {
+    viewPort(section)
+    ? section.classList.add("your-active-class")
+    : section.classList.remove("your-active-class");
   });
-/** 
-* * Add class 'active' to section when near top of viewport 
-*/
-const active = document.getElementsByClassName("your-active-class"); // class label in <section> element
-const div = document.querySelectorAll('div'); // div element
+};
 
-function makeActive(){
-  for(const section of sections) {
-      const div = section.getBoundingClientRect();
-      if (div.top <= 150 && div.bottom >= 150) {
-      //apply active state on current section and corresponding Nav link
-      section.classList.add("your-active-class");
-      document.querySelector(`${'#'+section.id}`).classList.add("active");
-      } else {
-      //Remove active state from other section and corresponding Nav link
-      section.classList.remove("your-active-class");
-      document.querySelector(`${'#'+section.id}`).classList.remove("active");
-      }
-   }
-}
+// Scroll & Active 
+window.addEventListener("scroll", setActive);
 
-window.addEventListener("scroll", function() {
-	div.forEach(function(div) {
-		const bounds = div.getBoundingClientRect();
-		const isInViewport = bounds.top >= 0
-			&& bounds.left > 0
-			&& bounds.right <= window.innerWidth
-			&& bounds.bottom <= window.innerWidth;
+// Link Scroll
+const scrollTo = (event) => {
+  event.preventDefault();
+  const targetId = event.target.getAttribute("href");
+  const targetSection = document.querySelector(targetId);
+  targetSection.scrollIntoView({ behavior: "smooth" });
+};
 
-		if (isInViewport) {
-			div.classList.add("your-active-class");
-		} else {
-			div.classList.remove("your-active-class");
-		}
-	});
-})
+// ScrollTo Nav Links
+const navLinks = document.querySelectorAll(".menu__link");
+navLinks.forEach((link) => {
+  link.addEventListener("click", scrollTo);
+});
 
-/** 
-* * Scroll to anchor ID 
-*/ 
-
-(window).scroll(function() {
-  ("section").each(function(){
-     section = (this).offset().top;
-     section = (window).scrollTop();
-     onclick.preventDefault();
-     section.scrollIntoView({behavior: "smooth"});
-     
-  });
-})
-
-
+setActive;
 
