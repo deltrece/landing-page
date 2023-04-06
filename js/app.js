@@ -36,7 +36,7 @@ const navMenuLinks = (listItem) => {
 
 // Viewport Parameters
 const viewPort = (section) => {
-  const forBoundingClient = section.getBoundingClientRect ();
+  const forBoundingClient = section.getBoundingClientRect();
   return (
     forBoundingClient.top >= -200 && forBoundingClient.bottom <= (window.innerHeight || document.elementFromPoint.clientHeight) + 200
   );
@@ -51,7 +51,7 @@ const navBar = () => {
   const navMenu = Array.from(sections).map(navMenuLinks);
   navBarList.innerHTML = navMenu.join("");
 };
-navBar ();
+navBar();
 
 // Link Scroll Feature
 const scrollTo = (event) => {
@@ -70,7 +70,7 @@ navLinks.forEach((link) => {
 const setActiveClass = () => {
   navLinks.forEach((link) => {
     const targetId = link.getAttribute("href");
-    const targetSection = document.querySelector(targetId); 
+    const targetSection = document.querySelector(targetId);
 
     if (viewPort(targetSection)) {
       link.classList.add("active");
@@ -79,7 +79,7 @@ const setActiveClass = () => {
       link.classList.remove("active");
       targetSection.classList.remove("your-active-class");
     }
-    });
+  });
 };
 
 window.addEventListener("scroll", setActiveClass);
