@@ -19,7 +19,7 @@ This originated from a starter project with some HTML and CSS styling which disp
 
 ## :electric_plug: How to Install and Run
 
-No installation necessary. View in your browswer.
+No installation necessary. View in your browser.
 
 ## :computer: How to Use Project
 
