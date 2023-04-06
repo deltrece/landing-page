@@ -76,7 +76,27 @@ const scrollTo = (event) => {
 const navLinks = document.querySelectorAll(".menu__link");
 navLinks.forEach((link) => {
   link.addEventListener("click", scrollTo);
-});
+  });
 
 setActive;
+//=======================
 
+// const navLinks = document.querySelector('.menu__link');
+// navLinks.addEventListener("click", scroll() {
+//   navLinks.style.color = "red";
+// });
+
+// setActive;
+
+// window.addEventListener('scroll', function() {
+//   const section = document.querySelector("sections");
+//   const navLink = document.querySelector(".menu__link");
+//   const sectionPosition = section.getBoundingClientRect();
+//   const viewportHeight = window.innerHeight;
+  
+//   if (sectionPosition.top <= viewportHeight && sectionPosition.bottom >= 0) {
+//     navLink.classList.add("your-active-class");
+//   } else {
+//     navLink.classList.remove("your-active-class");
+//   }
+// });
