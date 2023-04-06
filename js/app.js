@@ -20,10 +20,10 @@
 
 
 /** 
-* * build the nav
+* * Build the nav menu
 */
 const navBarList = document.getElementById("navbar__list"); // <unordered list> element located in <nav> element located in <header> element
-const sections = document.querySelectorAll("section");  // <section> element in html file (four of them)
+const sections = document.querySelectorAll("section");  // <section> element in html file
 
 /**
  * ! Helper Functions
@@ -45,6 +45,7 @@ const viewPort = (section) => {
 /**
  * ! Main Functions
  */
+
 // Create Nav Bar
 const navBar = () => {
   const navMenu = Array.from(sections).map(navMenuLinks);
@@ -52,19 +53,7 @@ const navBar = () => {
 };
 navBar ();
 
-// Create & Set Active State
-const setActive = () => {
-  sections.forEach((section) => {
-    viewPort(section)
-    ? section.classList.add("your-active-class")
-    : section.classList.remove("your-active-class");
-  });
-};
-
-// Scroll & Active 
-window.addEventListener("scroll", setActive);
-
-// Link Scroll
+// Link Scroll Feature
 const scrollTo = (event) => {
   event.preventDefault();
   const targetId = event.target.getAttribute("href");
@@ -72,31 +61,26 @@ const scrollTo = (event) => {
   targetSection.scrollIntoView({ behavior: "smooth" });
 };
 
-// ScrollTo Nav Links
+// Active Link and Section 
 const navLinks = document.querySelectorAll(".menu__link");
 navLinks.forEach((link) => {
-  link.addEventListener("click", scrollTo);
-  });
+  link.addEventListener('click', scrollTo);
+});
 
-setActive;
-//=======================
+const setActiveClass = () => {
+  navLinks.forEach((link) => {
+    const targetId = link.getAttribute("href");
+    const targetSection = document.querySelector(targetId); 
 
-// const navLinks = document.querySelector('.menu__link');
-// navLinks.addEventListener("click", scroll() {
-//   navLinks.style.color = "red";
-// });
+    if (viewPort(targetSection)) {
+      link.classList.add("active");
+      targetSection.classList.add("your-active-class");
+    } else {
+      link.classList.remove("active");
+      targetSection.classList.remove("your-active-class");
+    }
+    });
+};
 
-// setActive;
+window.addEventListener("scroll", setActiveClass);
 
-// window.addEventListener('scroll', function() {
-//   const section = document.querySelector("sections");
-//   const navLink = document.querySelector(".menu__link");
-//   const sectionPosition = section.getBoundingClientRect();
-//   const viewportHeight = window.innerHeight;
-  
-//   if (sectionPosition.top <= viewportHeight && sectionPosition.bottom >= 0) {
-//     navLink.classList.add("your-active-class");
-//   } else {
-//     navLink.classList.remove("your-active-class");
-//   }
-// });

@@ -96,6 +96,10 @@ section {
     flex-direction: row;
     justify-content: flex-end;
 }
+.active {
+    
+    background-color: rgb(0, 255, 132) !important;
+}
 
 /* Header Styles */
 .page__header {
