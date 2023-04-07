@@ -64,7 +64,7 @@ const scrollTo = (event) => {
 // Active Link and Section 
 const navLinks = document.querySelectorAll(".menu__link");
 navLinks.forEach((link) => {
-  link.addEventListener('click', scrollTo);
+  link.addEventListener("click", scrollTo);
 });
 
 const setActiveClass = () => {
