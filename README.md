@@ -34,6 +34,7 @@ Myself, Deltrece Daniels, along with Udacity session leaders and peers.
 Fork this project and create your own landing page.
 
 ## :books: Resources
+
 Udacity classroom module, library books and their access to online learning academys.  YouTube videos, Session Leads and Self-Initiated Peer Study Sessions.
 
 ## :bulb: :house: Lighthouse Report
