@@ -7,7 +7,7 @@
 * [How_to_Use_Project](#computer-how-to-use-project)
 * [Credits](#family_man_woman_girl_boy-credits)
 * [How_to_Contribute](#pen-how-to-contribute)
-* [Resources](#books)
+* [Resources](#books-resources)
 * [Lighthouse_Report](#bulb-house-lighthouse-report)
 * [License](#ballot_box_with_check-license)
 
